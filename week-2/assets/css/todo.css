@@ -1,0 +1,62 @@
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.todo .card-wrapper {
+  border: 1px solid black;
+  width: 300px;
+  padding: 4px 1px;
+}
+
+.todo .card-wrapper h3 {
+  text-align: center;
+}
+
+.todo .todo-item {
+  border: 1px solid black;
+  padding: 16px 16px 4px 16px;
+}
+
+.todo .todo-item h3 {
+  margin-bottom: 16px;
+}
+
+.todo .todo-item .button-wrapper {
+  margin: 8px 0 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.button-wrapper button {
+  width: 56px;
+  padding: 2px;
+  border: none;
+}
+
+.btn-edit {
+  background-color: yellow;
+}
+
+.btn-delete {
+  background-color: red;
+}
+
+.btn-done {
+  background-color: green;
+}
+
+.floating-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  background-color: black;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

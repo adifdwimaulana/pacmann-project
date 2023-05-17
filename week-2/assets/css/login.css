@@ -1,0 +1,27 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login h3 {
+  margin-bottom: 16px;
+}
+
+.login .row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login .row * {
+  width: 400px;
+  padding: 8px 4px; /* top right bottom left */
+}
+
+.login .row button {
+  background-color: lightgreen;
+  border: none;
+}
