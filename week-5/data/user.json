@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "user_id": 1,
+      "name": "Ridwan",
+      "email": "ridwan@mail.com",
+      "password": "123456"
+    },
+    {
+      "user_id": 2,
+      "name": "Bagas",
+      "email": "bagas@mail.com",
+      "password": "123456"
+    }
+  ]
+}
