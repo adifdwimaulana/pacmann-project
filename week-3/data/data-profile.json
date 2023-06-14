@@ -1,0 +1,10 @@
+{
+    "name": "Ridwan",
+    "profile_picture": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg",
+    "biography": "Saya adalah seorang software engineer, yang telah berkecimpung sangat lama dalam dunia web development. saya sangat memahami konsep Rest API, Authentication, dan RPC. Memiliki banyak projek dan sudah berkerja diberbagai perusahaan ternama",
+    "task_detail": {
+      "total_task": 200,
+      "task_done": 150,
+      "task_on_progress": 50
+    }
+  }
