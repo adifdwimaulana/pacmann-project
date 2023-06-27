@@ -1,0 +1,51 @@
+{% extends '/auth/base.html' %}
+{% block content %}
+  <section class="container w-50 bg-white rounded p-5">
+    <form id="form-register">
+         <!-- bagian toast error-->
+         <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+            <div class="toast-container p-3 top-0 start-50 translate-middle-x" id="toastPlacement">
+              <div class="toast text-bg-danger" id="liveToast">
+                <div class="toast-body" id="toast-body">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end bagian toast -->
+                   <!-- bagian toast success-->
+         <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+            <div class="toast-container p-3 top-0 start-50 translate-middle-x" id="toastPlacement">
+              <div class="toast text-bg-success" id="liveToastSuccess">
+                <div class="toast-body" id="toast-body-success">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end bagian toast -->
+      <h1 class="text-center">Registration Page</h1>
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Lengkap</label>
+        <input type="text" class="form-control" id="nama">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <div class="mb-3">
+        <label for="confirm_password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm_password">
+      </div>
+      <a href="{{url_for('frontend.login')}}">Back To Login!</a>
+      <button type="submit" class="btn btn-primary w-100" id="liveToastBtn">Submit</button>
+    </form>
+  </section>
+    
+
+
+
+  <script src="{{url_for('static', filename="js/script-register.js")}}"></script>
+  {% endblock %}

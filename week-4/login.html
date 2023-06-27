@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body class="mt-5 bg-primary">
+
+    <section class="container w-50 bg-white rounded p-5">
+      <form id="form-login">
+          <!-- bagian toast -->
+          <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+            <div class="toast-container p-3 top-0 start-50 translate-middle-x" id="toastPlacement">
+              <div class="toast text-bg-danger" id="liveToast">
+                <div class="toast-body" id="toast-body">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end bagian toast -->
+            <h1 class="text-center">Login Page</h1>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="login-email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100" id="btn-login">Login</button>
+            <a href="http://127.0.0.1:5500/registration.html">Daftar sekarang!</a>
+          </form>
+    </section>
+    <script src="/assets/js/script-login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

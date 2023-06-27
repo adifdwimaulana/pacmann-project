@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="container mt-5 min-vh-100" id="task" data-bs-spy="scroll">
+    <!-- bagian toast -->
+    <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+        <div class="toast-container p-3 top-0 start-0 " id="toastPlacement">
+          <div class="toast text-bg-danger" id="liveToast">
+            <div class="toast-body" id="toast-body">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end bagian toast -->
+    <div class="row mt-5">
+        <div id="alert-loc">
+        </div>
+      <div class="col border p-3" ondrop="drop(event)" ondragover="allowDrop(event)" id="todo">
+        <h2>Todo</h2>
+        <!-- <article class="border p-3 drag" ondragstart="drag(event)" draggable="true" id="drag1"><h4 id="judul-1">Judul</h4><p id="description-1">Lorem ipsum dolor sit amet.</p><button class="badge bg-danger" id="badge-delete"
+            onclick="deleteEvent(this.id)">Delete</button><button class="badge bg-info" id="badge-edit"
+            data-bs-toggle="modal" data-bs-target="#myModalEdit" onclick="editEvent(this.id)">Edit</button>
+        </article> -->
+      </div>
+      <div class="col border p-3 offset-2" ondrop="drop(event)" ondragover="allowDrop(event)" id="done">
+        <h2>Done</h2>
+      </div>
+    </div>
+    <div class="text-center">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#myModalAdd">
+        <i class="bi bi-plus-lg"></i> Tambahkan Task
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- Modal Adding-->
+  <div class="modal fade" tabindex="-1" id="myModalAdd">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- bagian toast -->
+        <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+          <div class="toast-container p-3 top-0 start-0 " id="toastPlacement">
+            <div class="toast text-bg-danger" id="liveToastAdd">
+              <div class="toast-body" id="toast-body-add">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end bagian toast -->
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Add New Task
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="add-form">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Judul</span>
+              <input type="text" class="form-control" id="title">
+            </div>
+            <div class="input-group flex-nowrap mt-2">
+              <span class="input-group-text" id="addon-wrapping">Deskripsi</span>
+              <input type="text" class="form-control" id="description">
+            </div>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary" id="btn-add">Tambah</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit-->
+  <div class="modal fade" tabindex="-1" id="myModalEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+         <!-- bagian toast -->
+         <div aria-live="polite" aria-atomic="true" class="bg-dark position-relative bd-example-toasts">
+          <div class="toast-container p-3 top-0 start-0 " id="toastPlacement">
+            <div class="toast text-bg-danger" id="liveToastEdit">
+              <div class="toast-body" id="toast-body-edit">
+                Isian tidak boleh kosong!!
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end bagian toast -->
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Edit Task
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-form">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">Judul</span>
+              <input type="text" class="form-control" id="edit-title">
+            </div>
+            <div class="input-group flex-nowrap mt-2">
+              <span class="input-group-text" id="addon-wrapping">Deskripsi</span>
+              <input type="text" class="form-control" id="edit-description">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary" id="btn-edit" onsubmit="updateTask()">Edit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Delete-->
+  <div class="modal fade" tabindex="-1" id="myModalDelete">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Perhatian !!!
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Apakah Anda yakin menghapus Data berikut ?</p>
+        </div>
+        <div class="modal-footer">
+          <form id="delete-form">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-danger" id="btn-delete">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light text-center text-lg-start">
+    <h3 id="jam" class="text-center p-3 bg-primary text-white"></h3>
+  </footer>
+
+  {% endblock %}
